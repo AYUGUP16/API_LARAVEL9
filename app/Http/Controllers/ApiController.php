@@ -27,10 +27,10 @@ class ApiController extends Controller
 
         // }
         if ($validator->fails()) {
-            if ($errors->get('mob_no', 'unique')) {
+            if ($errors->has('mob_no', 'unique')) {
                 return response()->json(['status' => 'Failed', 'error_message' => 'mobile no. already taken']);
             }
-            return response()->json(['status' => 'Failed', 'error message' =>$errors]);
+            return response()->json(['status' => 'Failed', 'error message' =>$errors->all()]);
         }
 
 
