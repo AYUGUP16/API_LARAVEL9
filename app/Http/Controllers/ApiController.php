@@ -30,7 +30,7 @@ class ApiController extends Controller
             if ($errors->has('mob_no', 'unique')) {
                 return response()->json(['status' => 'Failed', 'error_message' => 'mobile no. already taken']);
             }
-            return response()->json(['status' => 'Failed', 'error message' =>$errors->all()]);
+            return response()->json(['status' => 'Failed', 'error message' => $errors->all()]);
         }
 
 
@@ -47,6 +47,7 @@ class ApiController extends Controller
         $students->save();
         return response()->json([
             'status' => 'Success',
+            'message'=>'User Register Successfuly',
             'data' => $students,
         ]);
     }
