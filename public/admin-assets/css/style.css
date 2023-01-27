@@ -1,0 +1,200 @@
+/* <!------Signup---------> */
+.registration_from .signup_error {
+    color: #dc3545;
+}
+img#imagePreview {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover;
+}
+.form-valid-error {
+    color: #dc3545;
+}
+.card-body.box-profile {
+    background: whitesmoke;
+}
+.avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 20px auto;
+}
+
+/***********Profile image Section*****************/
+.admin_edit_profile_image .avatar-edit {
+        position: absolute;
+        right: 20px;
+        z-index: 1;
+        top: 10px;
+}
+.admin_edit_profile_image input {
+  display: none;
+}
+.admin_edit_profile_image label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #ffffff;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+.admin_edit_profile_image label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}          
+              
+.admin_edit_profile_image label:after {
+    content: "\f040";
+    font-family: "FontAwesome";
+    color: #757575;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+.admin_edit_profile_image .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #f8f8f8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}   
+.admin_edit_profile_image .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/***********Profile image Section*****************/
+
+#information .col-sm-10 {
+    padding: 7px;
+}
+
+
+
+a {
+    cursor: pointer;
+}
+
+.form-valid-error {
+    display: block;
+    width: 100%;
+    color: #ff0000;
+}
+
+#parentcategorylisting img, #childcategorylisting img, #subchildcategorylisting img {
+    width: 38px;
+}
+
+
+/*****************Category Image upload****************Start**************/
+.containers{
+    height:190px;
+    position:relative;
+    max-width: 320px;
+    margin: auto; 
+}
+  
+.containers .imageWrapper{
+    border: 3px solid #888;
+    width:50%;
+    padding-bottom:50%;
+    border-radius:50%;
+    overflow:hidden;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.containers .imageWrapper img{
+    height:105%;
+    width:initial;
+    max-height:100%;
+    max-width: initial;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}  
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px; }
+  
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    width:100%;
+    max-width:130px;
+    text-align:center;
+    color:#212529;
+    font-size:16px;
+    background: transparent;
+    border: 2px solid #888;
+    padding: 8px 8px;
+    display:inline;
+    -ms-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    /* &:hover{
+      background:#999;
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.75);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.75);
+      box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.75);
+    } */
+  }
+  
+.file-upload input.cat-file-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    height:100%;
+}
+.upload_caticon_outer{
+    text-align: center;
+}
+
+/*****************Category Image upload*****************End*************/
+
+#add_new_blog_form .form-group.blog_img, #blog_editform .form-group.blog_img {
+    text-align: center;
+}
+span#content-summernote-error {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+#add_new_blog_form .note-editor.note-frame.card {
+    margin-bottom: auto;
+}
+.blog_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
