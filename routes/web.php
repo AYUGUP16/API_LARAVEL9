@@ -7,6 +7,8 @@ use App\Http\Controllers\admin\ParentCategoryController;
 use App\Http\Controllers\admin\ChildCategoryController;
 use App\Http\Controllers\admin\SubChildCategoryController;
 use App\Http\Controllers\admin\SubadminController;
+use App\Http\Controllers\admin\PlanController;
+
 // use App\Http\Controllers\admin\VendorController;
 
 use App\Http\Controllers\admin\PagesController;
@@ -77,7 +79,10 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('admin/all-blogs',[BlogsController::class,'all_blogs_list'])->name('allblogslist');
     Route::post('admin/insert-blog', [BlogsController::class, 'insert_blog']);
     Route::post('admin/edit-blog', [BlogsController::class, 'edit_blog']);
-	
+	// Route::get('admin/add-plan', [BlogsController::class, 'plans'])->name('add_plans');
+
+	Route::get('admin/add-plan', [PlanController::class, 'index'])->name('add_plans');
+
 	
 });
 //Non-logged-in user

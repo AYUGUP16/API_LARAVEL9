@@ -228,7 +228,7 @@
           <li class="nav-item">
             <a href="{{'dashboard'}}" class="nav-link {{ (Route::currentRouteName() == 'dashboard') ? 'active' : ''; }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Dashboard (MyOfficerlist)</p>
+              <p>Dashboard (IBC)</p>
             </a>            
           </li> 
 
@@ -308,6 +308,13 @@
             <a href="{{route('allblogslist')}}" class="nav-link {{ (Route::currentRouteName() == 'allblogslist') ? 'active' : ''; }}">
               <i class="nav-icon fa fa-users"></i>
               <p>Blogs</p>
+            </a>            
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('add_plans')}}" class="nav-link {{ (Route::currentRouteName() == 'allblogslist') ? 'active' : ''; }}">
+              <i class="nav-icon fa fa-users"></i>
+              <p>Plans</p>
             </a>            
           </li>
 

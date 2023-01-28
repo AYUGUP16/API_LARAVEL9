@@ -17,6 +17,9 @@ class BlogsController extends Controller
         //dd($blogs_list);
         return view('admin.blogs.index', compact('blogs_list'));
     }
+    public function plans(){
+        return view('admin.plans.add_plan');
+    }
 
     public function insert_blog(Request $request){
 
