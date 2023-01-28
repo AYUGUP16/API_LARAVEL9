@@ -81,7 +81,9 @@ Route::group(['middleware' => ['auth']],function(){
     Route::post('admin/edit-blog', [BlogsController::class, 'edit_blog']);
 	// Route::get('admin/add-plan', [BlogsController::class, 'plans'])->name('add_plans');
 
-	Route::get('admin/add-plan', [PlanController::class, 'index'])->name('add_plans');
+	Route::get('admin/add-plan', [PlanController::class, 'index']);
+	Route::post('admin/create-plan', [PlanController::class, 'create'])->name('add_plans');
+
 
 	
 });

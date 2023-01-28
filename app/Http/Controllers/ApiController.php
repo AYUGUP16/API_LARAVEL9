@@ -76,44 +76,7 @@ class ApiController extends Controller
             ]);
         }
     }
-    public function plans(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'mrp' => 'required',
-            'validity' => 'required',
-            'total_data' => 'required',
-            'speed' => 'required',
-            'voice' => 'required',
-            'sms' => 'required',
-            'other_addon' => 'required',
-
-        ]);
-        if ($validator->fails()) {
-            return response()->json(['status' => 'Failed', 'error_message' => $validator->errors()]);
-        }
-        $mrp = $request->input('mrp');
-        $validity = $request->input('validity');
-        $total_data = $request->input('total_data');
-        $speed = $request->input('speed');
-        $voice = $request->input('voice');
-        $sms = $request->input('sms');
-        $other_addon = $request->input('other_addon');
-
-
-        $plans = new plans();
-        $plans->mrp =  $mrp;
-        $plans->validity = $validity;
-        $plans->total_data = $total_data;
-        $plans->speed = $speed;
-        $plans->voice = $voice;
-        $plans->sms = $sms;
-        $plans->other_addon = $other_addon;
-
-        $plans->save();
-        return response()->json([
-            'status' => 'Success',
-            'data' => $plans,
-        ]);
+   
     }
 
 
