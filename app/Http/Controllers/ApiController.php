@@ -27,10 +27,14 @@ class ApiController extends Controller
 
         // }
         if ($validator->fails()) {
-            if ($errors->get('mob_no', 'unique')) {
+            if ($errors->has('mob_no', 'unique')) {
                 return response()->json(['status' => 'Failed', 'error_message' => 'mobile no. already taken']);
             }
+<<<<<<< HEAD
             return response()->json(['status' => 'Failed', 'error_message' =>$errors]);
+=======
+            return response()->json(['status' => 'Failed', 'error message' => $errors->all()]);
+>>>>>>> dee94bf6b7973c61201d05907d08324628e85454
         }
 
 
@@ -47,6 +51,7 @@ class ApiController extends Controller
         $students->save();
         return response()->json([
             'status' => 'Success',
+            'message'=>'User Register Successfuly',
             'data' => $students,
         ]);
     }
