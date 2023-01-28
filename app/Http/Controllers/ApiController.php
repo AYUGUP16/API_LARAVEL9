@@ -30,11 +30,9 @@ class ApiController extends Controller
             if ($errors->has('mob_no', 'unique')) {
                 return response()->json(['status' => 'Failed', 'error_message' => 'mobile no. already taken']);
             }
-<<<<<<< HEAD
-            return response()->json(['status' => 'Failed', 'error_message' =>$errors]);
-=======
+            // return response()->json(['status' => 'Failed', 'error_message' =>$errors]);
+
             return response()->json(['status' => 'Failed', 'error message' => $errors->all()]);
->>>>>>> dee94bf6b7973c61201d05907d08324628e85454
         }
 
 
