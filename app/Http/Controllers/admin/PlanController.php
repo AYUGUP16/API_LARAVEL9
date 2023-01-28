@@ -15,16 +15,15 @@ class PlanController extends Controller
     }
     public function create(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'mrp' => 'required',
+       $request->validate([
+             'mrp' => 'required',
             'validity' => 'required',
             'total_data' => 'required',
             'speed' => 'required',
             'voice' => 'required',
             'sms' => 'required',
             'other_addon' => 'required',
-
-        ]);
+       ]);
         
         $mrp = $request->input('mrp');
         $validity = $request->input('validity');
