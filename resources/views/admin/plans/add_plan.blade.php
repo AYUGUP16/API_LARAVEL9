@@ -6,15 +6,15 @@
         <div class="card-header">
             <h3 class="card-title">ADD PLANS</h3>
         </div>
-         <form action="{{route('add_plans')}}" method="post">
+        <form action="{{route('add_plans')}}" method="post">
             @csrf
             <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">MRP</label>
                     <input type="text" class="form-control" name='mrp' placeholder="Enter MRP">
-                     @error('mrp')
-                            <span class="text-danger">{{ $message }}</span>
-                            @endif
+                    @error('mrp')
+                    <span class="text-danger">{{ $message }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">VALIDITY</label>
@@ -42,12 +42,12 @@
                 </div>
 
             </div>
-    </div>
-    <!-- /.card-body -->
+        </div>
+        <!-- /.card-body -->
 
-    <div class="card-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
 </div>
 @endsection

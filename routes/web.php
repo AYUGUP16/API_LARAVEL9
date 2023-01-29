@@ -83,6 +83,9 @@ Route::group(['middleware' => ['auth']],function(){
 
 	Route::get('admin/add-plan', [PlanController::class, 'index']);
 	Route::post('admin/create-plan', [PlanController::class, 'create'])->name('add_plans');
+	Route::get('admin/list-plan', [PlanController::class, 'show'])->name('show_plans');
+	Route::get('admin/delete-plan/{id}', [PlanController::class, 'deleteplan']);
+	Route::get('admin/edit-plan', [PlanController::class, 'edit'])->name('edit_plan');
 
 
 	

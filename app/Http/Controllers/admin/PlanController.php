@@ -47,4 +47,18 @@ class PlanController extends Controller
         return redirect()->route('add_plans')->with('status', 'Plan Added Successfully');
 
     }
+      public function show()
+    {
+
+        $plans = Plan::all();
+        return view('admin.plans.plan_list', compact('plans'));
+    }
+    public function deleteplan($id)
+    {
+        // dd('ok');
+        // dd($id);
+        Plan::find($id)->delete();
+        return redirect()->route('show_plans')
+            ->with('success', 'Plan deleted successfully');
+    }
 }
