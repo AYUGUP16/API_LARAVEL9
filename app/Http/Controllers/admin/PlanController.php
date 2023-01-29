@@ -61,4 +61,25 @@ class PlanController extends Controller
         return redirect()->route('show_plans')
             ->with('success', 'Plan deleted successfully');
     }
+    public function updateplan($id)
+    {
+
+        $plans =  Plan::find($id);
+        return view('admin.plans.update_plan', compact('plans'));
+    }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'mrp' => 'required',
+            'validity' => 'required',
+            'total_data' => 'required',
+            'speed' => 'required',
+            'voice' => 'required',
+            'sms' => 'required',
+            'other_addon' => 'required',
+        ]);
+        $plans = Plan::find($id);
+        $plans->update($request->all());
+        return redirect()->route('show_plans')->with('status', 'plan has been updated successfully.');
+    }
 }

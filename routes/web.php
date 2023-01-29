@@ -86,7 +86,8 @@ Route::group(['middleware' => ['auth']],function(){
 	Route::get('admin/list-plan', [PlanController::class, 'show'])->name('show_plans');
 	Route::get('admin/delete-plan/{id}', [PlanController::class, 'deleteplan']);
 	Route::get('admin/edit-plan', [PlanController::class, 'edit'])->name('edit_plan');
-
+Route::get('admin/update-plan/{id}', [PlanController::class, 'updateplan']);
+	Route::post('admin/plan-update/{id}', [PlanController::class, 'update'])->name('update_plan');
 
 	
 });

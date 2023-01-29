@@ -67,7 +67,8 @@
                                                         <a href="{{ url('admin/delete-plan') }}/{{$item->id}}" class="btn btn-danger btn-sm">Delete</a>
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('edit_plan',$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                                        <a href="{{ url('admin/update-plan') }}/{{ $item->id }}"
+                                                            class="btn btn-primary btn-sm">Edit</a>
                                                     </td>
 
                                                 </tr>
