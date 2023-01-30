@@ -24,7 +24,7 @@ class PlanController extends Controller
             'sms' => 'required',
             'other_addon' => 'required',
        ]);
-        
+
         $mrp = $request->input('mrp');
         $validity = $request->input('validity');
         $total_data = $request->input('total_data');
@@ -50,21 +50,21 @@ class PlanController extends Controller
       public function show()
     {
 
-        $plans = Plan::all();
+        $plans = plans::all();
         return view('admin.plans.plan_list', compact('plans'));
     }
     public function deleteplan($id)
     {
         // dd('ok');
         // dd($id);
-        Plan::find($id)->delete();
+        plans::find($id)->delete();
         return redirect()->route('show_plans')
             ->with('success', 'Plan deleted successfully');
     }
     public function updateplan($id)
     {
 
-        $plans =  Plan::find($id);
+        $plans =  plans::find($id);
         return view('admin.plans.update_plan', compact('plans'));
     }
     public function update(Request $request, $id)
@@ -78,7 +78,7 @@ class PlanController extends Controller
             'sms' => 'required',
             'other_addon' => 'required',
         ]);
-        $plans = Plan::find($id);
+        $plans = plans::find($id);
         $plans->update($request->all());
         return redirect()->route('show_plans')->with('status', 'plan has been updated successfully.');
     }

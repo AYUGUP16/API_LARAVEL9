@@ -16,23 +16,33 @@ class ApiController extends Controller
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'cust_id' => 'required',
+            'cust_id' => 'bail|required|unique:students',
             'fname' => 'required',
             'mob_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:9|max:10|unique:students',
         ]);
         $errors = $validator->errors();
+
 
         // if(Student::where('mob_no',$request->mob_no)->exists()){
         //     return response()->json(['status' => 'Failed', 'error_message'=>'mobile no. already taken']);
 
         // }
         if ($validator->fails()) {
-            if ($errors->has('mob_no', 'unique')) {
-                return response()->json(['status' => 'Failed', 'error_message' => 'mobile no. already taken']);
+            if ($errors->has('cust_id')) {
+                if ($errors->get('cust_id', 'unique')) {
+                    return response()->json(['status' => 'Failed', 'message' => $errors->first()]);
+                } else {
+                    return response()->json(['status' => 'Failed', 'message' => $errors->first()]);
+                }
+            } elseif ($errors->has('fname')) {
+                return response()->json(['status' => 'Failed', 'message' => $errors->first()]);
+            } elseif ($errors->get('mob_no')) {
+                if ($errors->has('mob_no', 'unique')) {
+                    return response()->json(['status' => 'Failed', 'message' => $errors->first()]);
+                } else {
+                    return response()->json(['status' => 'Failed', 'message' => $errors->first()]);
+                }
             }
-            // return response()->json(['status' => 'Failed', 'error_message' =>$errors]);
-
-            return response()->json(['status' => 'Failed', 'error message' => $errors->all()]);
         }
 
 
@@ -49,7 +59,7 @@ class ApiController extends Controller
         $students->save();
         return response()->json([
             'status' => 'Success',
-            'message'=>'User Register Successfuly',
+            'message' => 'User Register Successfuly',
             'data' => $students,
         ]);
     }
@@ -76,8 +86,10 @@ class ApiController extends Controller
             ]);
         }
     }
-   
-    }
+}
+            // return response()->json(['status' => 'Failed', 'error_message' =>$errors]);
+
+            // return response()->json(['status' => 'Failed', 'error message' => $errors->all()]);
 
 
 
@@ -118,4 +130,3 @@ class ApiController extends Controller
     //     }
     //     return "sorry no record found";
     // }
-}
