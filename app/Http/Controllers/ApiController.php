@@ -22,7 +22,7 @@ class ApiController extends Controller
         ->amount(150)
         ->get();
         dd($curr);
-        // i am ayush gupta
+
 
 //         $validator = Validator::make($request->all(), [
 //             'cust_id' => 'required|unique:students',
