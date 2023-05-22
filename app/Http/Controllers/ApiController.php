@@ -22,6 +22,7 @@ class ApiController extends Controller
         ->amount(150)
         ->get();
         dd($curr);
+        // jkxghjxgfsdjfgsjdfh
 
 
 //         $validator = Validator::make($request->all(), [
