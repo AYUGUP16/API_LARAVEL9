@@ -32,7 +32,7 @@ class ApiController extends Controller
         ->get();
         dd($curr);
 
-        // i am ayush gupta54654 hjghjghjgjg
+        // i am ayush gupta54654
 
 
 
