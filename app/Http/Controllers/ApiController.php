@@ -21,6 +21,7 @@ class ApiController extends Controller
             'mob_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:9|max:10|unique:students',
         ]);
         $errors = $validator->errors();
+        //fsfsfsfsf
 
 
         // if(Student::where('mob_no',$request->mob_no)->exists()){
