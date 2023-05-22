@@ -16,9 +16,9 @@ class CreateParentCategoryModelsTable extends Migration
         Schema::create('parent_category_models', function (Blueprint $table) {
             $table->id();
             $table->string('parent_name');
-            $table->string('parent_slug');            
+            $table->string('parent_slug');
             $table->string('parent_icon');
-            $table->string('parent_status'); 
+            $table->string('parent_status');
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

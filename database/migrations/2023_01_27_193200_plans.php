@@ -22,6 +22,8 @@ class Plans extends Migration
             $table->string('voice');
             $table->string('sms');
             $table->string('other_addon');
+            $table->unsignedInteger('subs_id');
+            $table->foreign('subs_id')->references('id')->on('subscription');
             $table->timestamps();
         });
     }

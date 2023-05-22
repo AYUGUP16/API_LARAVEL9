@@ -16,9 +16,9 @@ class CreateSubChildCategoryModelsTable extends Migration
         Schema::create('sub_child_category_models', function (Blueprint $table) {
             $table->id();
             $table->string('subchild_name');
-            $table->string('subchild_slug');     
-            $table->string('subchild_child_id');      
-            $table->string('subchild_parent_id');     
+            $table->string('subchild_slug');
+            $table->string('subchild_child_id');
+            $table->string('subchild_parent_id');
             $table->string('subchild_icon');
             $table->string('subchild_status');
             $table->dateTime('created_at')->useCurrent();
