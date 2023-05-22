@@ -41,7 +41,7 @@ Route::get('signout', [Admincontroller::class, 'signOut'])->name('signout');
 
 //Logged-in user
 Route::group(['middleware' => ['auth']],function(){
-	
+
 	Route::view('/admin','admin/dashboard')->name('dashboard');
 	Route::view('admin/dashboard','admin/dashboard')->name('dashboard');
 	//Route::view('admin/add-subadmin','admin/add-subadmin');
@@ -81,15 +81,19 @@ Route::group(['middleware' => ['auth']],function(){
     Route::post('admin/edit-blog', [BlogsController::class, 'edit_blog']);
 	// Route::get('admin/add-plan', [BlogsController::class, 'plans'])->name('add_plans');
 
-	Route::get('admin/add-plan', [PlanController::class, 'index']);
-	Route::post('admin/create-plan', [PlanController::class, 'create'])->name('add_plans');
+	Route::get('admin/add-plan', [PlanController::class, 'index'])->name('add_plans');
+	Route::post('admin/create-plan', [PlanController::class, 'create']);
 	Route::get('admin/list-plan', [PlanController::class, 'show'])->name('show_plans');
 	Route::get('admin/delete-plan/{id}', [PlanController::class, 'deleteplan']);
 	Route::get('admin/edit-plan', [PlanController::class, 'edit'])->name('edit_plan');
 Route::get('admin/update-plan/{id}', [PlanController::class, 'updateplan']);
 	Route::post('admin/plan-update/{id}', [PlanController::class, 'update'])->name('update_plan');
+    Route::get('admin/status-update', [PlanController::class, 'statusupdate'])->name('update_status');
 
-	
+	// Route::post('/subscription',[PlanController::class,"subscription"]);
+
+
+
 });
 //Non-logged-in user
 Route::group(['middleware' => ['guest']],function(){
