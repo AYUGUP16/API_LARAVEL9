@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\admin\PlanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/register',[ApiController::class,"create"]);
 Route::post('/login',[ApiController::class,"login"]);
-Route::post('/plans',[ApiController::class,"plans"]);
+Route::get('/get-plans',[ApiController::class,"getplans"]);
+Route::post('/subscription',[PlanController::class,"subscription"]);
+
+
 // Route::get('/show/{id}',[ApiController::class,"show"]);
 // Route::delete('/delete/{id}',[ApiController::class,"delete"]);
 
