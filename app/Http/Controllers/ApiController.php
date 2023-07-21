@@ -16,7 +16,7 @@ class ApiController extends Controller
     public function create(Request $request)
     {
 
-        $validator = Validator::make($request->all(), [
+        $validatorssss = Validator::make($request->all(), [
             'cust_id' => 'bail|required|unique:students',
             'fname' => 'required',
             'mob_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:9|max:10|unique:students',
