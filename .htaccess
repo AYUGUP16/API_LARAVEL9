@@ -4,7 +4,7 @@
     </IfModule>
 
     RewriteEngine On
-
+    this is new line add here .
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -16,7 +16,7 @@
 
     # Get Public Folder Path
     # RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
-    # RewriteRule ^(.*)$ public/$1 
+    # RewriteRule ^(.*)$ public/$1
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -38,7 +38,7 @@
 # RewriteRule ^ ^$1 [N]
 
 # RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
-# RewriteRule ^(.*)$ public/$1 
+# RewriteRule ^(.*)$ public/$1
 
 # RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteCond %{REQUEST_FILENAME} !-f
